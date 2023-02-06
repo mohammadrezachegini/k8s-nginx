@@ -4,9 +4,12 @@ metadata:
   annotations:
     kubernetes.io/change-cause: "add resources"
   name: nginx-deployment
+  namespace: reza
   labels:
     app: nginx
 spec:
+  strategy:
+    type: Recreate
   paused: false
   replicas: 3
   selector:
