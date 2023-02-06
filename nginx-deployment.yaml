@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   annotations:
-    kubernetes.io/change-cause: "change image 1.8 to latest"
+    kubernetes.io/change-cause: "add resources"
   name: nginx-deployment
   labels:
     app: nginx
@@ -21,3 +21,11 @@ spec:
           name:  web
           ports:
             - containerPort: 80
+          resources:
+            requests:
+              memory: "128Mi"
+              CPU: "200m"
+            limits:
+              memory: "256Mi"
+              CPU: "300m"
+
