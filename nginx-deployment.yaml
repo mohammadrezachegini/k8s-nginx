@@ -1,6 +1,8 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
+  annotations:
+    kubernetes.io/change-cause: "change image 1.8 to latest"
   name: nginx-deployment
   labels:
     app: nginx
