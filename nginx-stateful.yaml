@@ -7,8 +7,6 @@ metadata:
 spec:
   updateStrategy:
     type: OnDelete
-    rollingUpdate:
-      partition: 1 
   serviceName: "nginx"
   selector:
     matchLabels:
@@ -21,7 +19,7 @@ spec:
     spec:
      containers:
      - name: nginx
-       image: nginx:1.8
+       image: nginx
        ports:
         - containerPort: 80
           name: web
