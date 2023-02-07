@@ -5,8 +5,11 @@ metadata:
   namespace: reza-stateful
 
 spec:
+  podManagementPolicy: Parallel
   updateStrategy:
-    type: OnDelete
+    type: RollingUpdate
+    rollingUpdate:
+      partition: 1 
   serviceName: "nginx"
   selector:
     matchLabels:
