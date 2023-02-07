@@ -5,10 +5,10 @@ metadata:
   namespace: reza-stateful
 
 spec:
-updateStrategy:
-  type: rollingUpdate
-  rollingUpdate:
-    partition: 0
+  updateStrategy:
+    type: RollingUpdate
+    rollingUpdate:
+      partition: 1 
   serviceName: "nginx"
   selector:
     matchLabels:
@@ -21,7 +21,7 @@ updateStrategy:
     spec:
      containers:
      - name: nginx
-       image: nginx
+       image: nginx:1.8
        ports:
         - containerPort: 80
           name: web
