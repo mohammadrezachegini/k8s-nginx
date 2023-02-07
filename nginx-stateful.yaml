@@ -5,7 +5,11 @@ metadata:
   namespace: reza-stateful
 
 spec:
-  serviceName: nginx
+updateStrategy:
+  type: rollingUpdate
+  rollingUpdate:
+    partition: 0
+  serviceName: "nginx"
   selector:
     matchLabels:
       app: nginx
