@@ -6,7 +6,7 @@ metadata:
 
 spec:
   updateStrategy:
-    type: RollingUpdate
+    type: OnDelete
     rollingUpdate:
       partition: 1 
   serviceName: "nginx"
